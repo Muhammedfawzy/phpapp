@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<title></title>
+	<style type="text/css">
+		.gridContainer{
+   width:95%;
+   margin: 0 auto;
+   max-width: 1200px;
+}
+.project-images ul {
+   text-align: center;
+   padding-top: 20px;
+
+}
+.project-images ul li{
+   width: 300px;
+   padding: 10px;
+   position: relative;
+   border:2px solid #eee;
+   background-color: #703a3a;
+   display: inline-block;
+   margin-bottom: 15px;
+
+}
+.project-images ul li img{
+   display: block;
+   width:100%;
+   height: auto;
+
+}
+.project-images ul li span{
+   display: block;
+   padding: 5px;
+   color: #000;
+   font-size: 18px;
+   font-family: sans-serif;
+}
+.removeIcon{
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	z-index: 999
+
+}
+.removeIcon i , .zoomIn i{
+	font-size: 30px;
+	color: #b2a4a4;
+	cursor: pointer;
+}
+.zoomIn i{
+	font-size: 40px;
+}
+.zoomIn{
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	z-index: 999;
+	margin-top: -20px;
+	margin-right: -18px;
+
+}
+@media screen and (min-width: 480px) {
+	.project-images ul{
+		text-align: left
+	}
+	.projects ul li{
+		width: 45%;
+		display: inline-block;
+	}
+}
+
+
+	</style>
+</head>
+<body>
+<div class="gridContainer">
+	<div class="project-images">
+		<ul>
+			<li>
+			<div class="removeIcon">
+				<i class="fa fa-times" aria-hidden="true"></i>
+			</div><!-- removeIcon -->
+			<div class="zoomIn">
+				<i class="fa fa-search-plus" aria-hidden="true"></i>
+			</div><!-- zoomIn -->
+				<a href="#"><img src="images/cerro-toco-0.jpg"></a>
+			</li>
+			<li>
+			<div class="removeIcon">
+				<i class="fa fa-times" aria-hidden="true"></i>
+
+			</div><!-- removeIcon -->
+				<a href="#"><img src="images/cerro-toco-0.jpg"></a>
+			</li>
+			<li>
+			<div class="removeIcon">
+				<i class="fa fa-times" aria-hidden="true"></i>
+
+			</div><!-- removeIcon -->
+				<a href="#"><img src="images/cerro-toco-0.jpg"></a>
+			</li>
+			<li>
+			<div class="removeIcon">
+				<i class="fa fa-times" aria-hidden="true"></i>
+
+			</div><!-- removeIcon -->
+				<a href="#"><img src="images/cerro-toco-0.jpg"></a>
+			</li>
+			<li>
+			<div class="removeIcon">
+				<i class="fa fa-times" aria-hidden="true"></i>
+
+			</div><!-- removeIcon -->
+				<a href="#"><img src="images/cerro-toco-0.jpg"></a>
+			</li>
+		</ul>
+	</div><!-- project-images -->
+</div><!-- gridContainer -->
+</body>
+</html>

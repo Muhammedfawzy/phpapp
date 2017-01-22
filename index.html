@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tour</title>
+     <!--[if lt IE 9]>
+  <script src="js/shiv.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="css/pannelum.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+ 
+
+
+    <style>
+    #panorama {
+        width: 100%;
+        height: 600px;
+    }
+    </style>
+</head>
+<body>
+
+<div id="panorama">
+<div class="controllContainer">
+  <div class="gridContainer">
+    <ul class="controllIcons">
+      <li><span id="goTop">&#8679;</span></li>
+      <li><span id="goBottom">&#8681;</span></li>
+      <li><span id="goRight">&#8680;</span></li>
+      <li><span id="goLeft">&#8678;</span></li>
+    </ul><!--controllIcons-->
+    
+  </div><!--gridContainer-->
+</div><!--controlContainer-->
+</div>
+
+<script>
+var pan =
+pannellum.viewer('panorama', {   
+    "default": {
+        "firstScene": "circle",
+        "author": "Matthew Petroff",
+        "sceneFadeDuration": 1000,
+		"autoLoad":true
+    },
+
+    "scenes": {
+        "circle": {
+            "title": "Mason Circle",
+            "hfov": 110,
+            "pitch":-3,
+            "yaw": 117,
+            "type": "equirectangular",
+            "panorama": "images/360 degree image.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -2.1,
+                    "yaw": 150.9,
+                    "type": "scene",
+                    "text": "Spring House or Dairy",
+                    "sceneId": "house"
+                },
+				{
+                    "pitch": -2.1,
+                    "yaw": 132.9,
+                    "type": "scene",
+                    "text": "Spring House or Dairy",
+                    "sceneId": "circle"
+                },
+				{
+                    "pitch": -3.1,
+                    "yaw": 100.9,
+                    "type": "scene",
+                    "text": "Spring House or Dairy",
+                    "sceneId": "house"
+                }
+            ]
+        },
+
+        "house": {
+            "title": "Spring House or Dairy",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "images/cerro-toco-0.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Mason Circle",
+                    "sceneId": "circle",
+                    "targetYaw": -23,
+                    "targetPitch": 2,
+					"hotSpotDebug":true
+                }
+            ]
+        }
+    }
+});
+
+$("#goTop").click(function(){
+	
+
+pan.setPitch(pan.getPitch()+10)
+
+	})
+	$("#goBottom").click(function(){
+	
+
+pan.setPitch(pan.getPitch()-10)
+
+	})
+	$("#goRight").click(function(){
+	
+
+pan.setYaw(pan.getYaw()+10)
+
+	})
+	$("#goLeft").click(function(){
+	
+
+pan.setYaw(pan.getYaw()-10)
+	})
+	$("#goImage").attr("href","circle")
+	
+</script>
+
+</body>
+</html>
