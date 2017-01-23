@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	    <link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 
-	<title>all projects</title>
-	<style type="text/css">
-		.gridContainer{
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <title>all projects</title>
+    <style type="text/css">
+        .gridContainer{
    width:95%;
    margin: 0 auto;
    max-width: 1200px;
@@ -48,7 +50,7 @@
 }
 .removeIcon i , .zoomIn i{
   font-size: 30px;
-  color: #b2a4a4;
+  color: #000;
   cursor: pointer;
 }
 .zoomIn i{
@@ -64,24 +66,24 @@
 
 }
 @media screen and (min-width: 480px) {
-	.projects ul{
-		text-align: left
-	}
-	.projects ul li{
-		width: 45%;
-		display: inline-block;
-	}
+    .projects ul{
+        text-align: left
+    }
+    .projects ul li{
+        width: 45%;
+        display: inline-block;
+    }
 }
 
 
-	</style>
+    </style>
 
 </head>
 <body>
 <div class="gridContainer">
-	<div class="projects">
-		<ul>
-		<?php
+    <div class="projects">
+        <ul>
+        <?php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -101,6 +103,9 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo"<li>";
+         echo "<div class='removeIcon'>
+        <i class='fa fa-times' aria-hidden='true' onclick='deleteImage( ".$row["id"].")'></i>
+      </div>";
         echo "<a href='project.php?id=".$row["id"]."'>";
         echo "<img src='uploads/".$row["image_name"]."'>";
         echo "<span>".$row["name"]."</span>";
@@ -111,13 +116,16 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 $conn->close();
-?>			
-		</ul>
-	</div><!-- projects -->
+?>          
+        </ul>
+    </div><!-- projects -->
 </div><!-- gridCOntainer -->
 <form action="php/newProject.php" method="post" enctype="multipart/form-data">
-  <input type="text" name="project_name">
+ <span>enter project name</span> 
+ <input type="text" name="project_name">
+  <span>enter password</span>
   <input type="password" name="password">
+  
   <input type="file" name="fileToUpload" id="fileToUpload">
   <input type="submit" value="Add" name="submit">
 </form>

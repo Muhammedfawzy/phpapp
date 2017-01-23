@@ -83,6 +83,6 @@ if ($uploadOk == 0) {
 }
 }
 
-header("Location: ../allprojects.php");
+header("Location: ../index.php");
 
 ?>
