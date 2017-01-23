@@ -7,11 +7,15 @@ $imagename = $_FILES["fileToUpload"]["name"];
 
 if($password == "123456"){
 
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "3d";
+$cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$cleardb_server = $cleardb_url["host"];
+$cleardb_username = $cleardb_url["user"];
+$cleardb_password = $cleardb_url["pass"];
+$cleardb = substr($cleardb_url["path"], 1);
+$servername = $cleardb_server;
+$username = $cleardb_username;
+$password = $cleardb_password;
+$dbname = $cleardb;
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
